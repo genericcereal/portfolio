@@ -59,10 +59,10 @@ body {
 }
 
 .pro {
-height: 380px;
-width: 100%;
-min-width: 500px;
-position: relative;
+    height: 380px;
+    width: 100%;
+    min-width: 500px;
+    position: relative;
 }
 
 .main-title {
@@ -95,44 +95,53 @@ backface-visibility: hidden;
   transform: rotateY( 180deg );
 }
 
-.project-title {
-  position: absolute;
-  bottom: 0;
-  height: 12px;
-  line-height: 12px;
+.project-image-container {
+
 }
 
-.project-title-mask {
-  height: 0;
-  transform-origin: top;
-  overflow: hidden;
+.project-image2 {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
 }
+
+.project-title {
+
+}
+.project-title-mask {
+
+}
+
+.project-row {
+    /* margin: 100px 0; */
+}
+
+.project {
+    -webkit-transition: transform .5s; /* Safari */
+    transition: transform .5s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
+
 .top-bumper {
   margin-top: 300px;
 }
-.square img {
-  width: 80vw;
-  position: absolute;
-  margin-left: -400px;
-  margin-top: -100px;
-}
-
 
 /*viewport borders */
 
 .borders {
-display: block;
-z-index: 140;
-position: fixed;
+    display: block;
+    z-index: 140;
+    position: fixed;
 }
 
 .bord {
-
     position: fixed;
-      background-color: #000;
-  -webkit-transition: all 0.2s; /* Safari */
-transition: all 0.2s;
+    background-color: #000;
+    -webkit-transition: all 0.2s; /* Safari */
+    transition: all 0.2s;
 }
+
 .top-border {
   height: 0px;
   width: 100vw;

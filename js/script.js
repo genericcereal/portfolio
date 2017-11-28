@@ -29,7 +29,6 @@ var onMove = function(event) {
   }
 
   lastScrollTop = st;
-
 }
 
 // Smooth Scroll Animation
@@ -50,16 +49,57 @@ var onScroll = function(e) {
   }
 
   myLoop();
+};
 
+
+// Parallax Items Scrolling
+var PARALLAX_CONFIG = {
+    translateDistance: 150, // adjust for distance between items (tighter spring vs longer spring)
+    itemClass: 'project', // class representing each item
+    incomingTranslateTiming: 1.25, // these two values affect the "springiness" feel
+    outgoingTranslateTiming: .75,
+};
+PARALLAX_CONFIG.parallaxItems = $('.' + PARALLAX_CONFIG.itemClass);
+PARALLAX_CONFIG.verticalBoundSize = $(PARALLAX_CONFIG.parallaxItems.get(0)).height() / 2;
+PARALLAX_CONFIG.originalOffsets = $.map(PARALLAX_CONFIG.parallaxItems, function(pi, i) {
+    return $(pi).offset().top;
+});
+
+var parallaxScroll = function(e) {
+    var viewportHeight = $(window).height();
+    var pagePosition = e.currentTarget.scrollY;
+    PARALLAX_CONFIG.parallaxItems.each(function(i) {
+        var offset = PARALLAX_CONFIG.originalOffsets[i];
+        var itemHeight = $(this).height();
+        var centeredOffset = offset - (viewportHeight - itemHeight) / 2;
+
+        if (pagePosition <= centeredOffset - PARALLAX_CONFIG.verticalBoundSize) {
+            $(this).css({
+                transform: "translate(0, " + PARALLAX_CONFIG.translateDistance + "px)",
+                transition: "transform " + PARALLAX_CONFIG.outgoingTranslateTiming + "s",
+            });
+        } else if (pagePosition > centeredOffset - PARALLAX_CONFIG.verticalBoundSize && pagePosition < centeredOffset + PARALLAX_CONFIG.verticalBoundSize) {
+            $(this).css({
+                transform: "translate(0, 0)",
+                transition: "transform " + PARALLAX_CONFIG.incomingTranslateTiming + "s",
+            });
+        } else {
+            $(this).css({
+                transform: "translate(0, -" + PARALLAX_CONFIG.translateDistance + "px)",
+                transition: "transform " + PARALLAX_CONFIG.outgoingTranslateTiming + "s",
+            });
+        };
+    });
 };
 
 // Combine Smooth Scroll with Stagger
 
 $(window).scroll(function(e, event) {
-  onScroll(e);
-  onMove(event);
-
+  // onScroll(e);
+  // onMove(event);
+  parallaxScroll(e);
 });
+$(window).scroll();
 
 function launchProject(el) {
 

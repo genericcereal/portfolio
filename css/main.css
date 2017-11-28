@@ -54,10 +54,17 @@ body {
 }
 
 .pro {
+<<<<<<< HEAD
   height: 380px;
   width: 100%;
   min-width: 500px;
   position: relative;
+=======
+    height: 380px;
+    width: 100%;
+    min-width: 500px;
+    position: relative;
+>>>>>>> f501dead659cb03c2fbdde9dea237d6e4dd483f1
 }
 
 .main-title {
@@ -91,19 +98,24 @@ body {
   transform: rotateY( 180deg);
 }
 
+.project-image-container {
+
+}
+
+.project-image2 {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
 .project-title {
-  position: absolute;
-  bottom: 0;
-  height: 12px;
-  line-height: 12px;
-}
 
+}
 .project-title-mask {
-  height: 0;
-  transform-origin: top;
-  overflow: hidden;
+
 }
 
+<<<<<<< HEAD
 .top-bumper {
   margin-top: 300px;
 }
@@ -129,6 +141,36 @@ body {
   -webkit-transition: all 0.2s;
   /* Safari */
   transition: all 0.2s;
+=======
+.project-row {
+    /* margin: 100px 0; */
+}
+
+.project {
+    -webkit-transition: transform .5s; /* Safari */
+    transition: transform .5s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
+
+.top-bumper {
+  margin-top: 300px;
+}
+
+/*viewport borders */
+
+.borders {
+    display: block;
+    z-index: 140;
+    position: fixed;
+}
+
+.bord {
+    position: fixed;
+    background-color: #000;
+    -webkit-transition: all 0.2s; /* Safari */
+    transition: all 0.2s;
+>>>>>>> f501dead659cb03c2fbdde9dea237d6e4dd483f1
 }
 
 .top-border {

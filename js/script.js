@@ -1,58 +1,14 @@
 var x = 0;
 var y = 0;
 var lastScrollTop = 0;
-var projectSection = document.querySelector('.project-pages');
-var projectIndex = document.querySelector('.project-index');
+//var projectSection = document.querySelector('.project-pages');
+//var projectIndex = document.querySelector('.project-index');
 var sideBorders = document.querySelector('.project-index');
 var launchedProject = 0;
 var launchedProjectImg = 0;
 
-
-
-// Stagger Scroll Animation
-
-var onMove = function(event) {
-
-  var st = $(this).scrollTop();
-  if (st > lastScrollTop) {
-
-    //I'm sure there's a better way to do this...
-
-    $('.project1').removeClass("down1").addClass("up1");
-    $('.project2').removeClass("down2").addClass("up2");
-    $('.project3').removeClass("down3").addClass("up3");
-  } else {
-    $('.project1').removeClass("up1").addClass("down1");
-    $('.project2').removeClass("up2").addClass("down2");
-    $('.project3').removeClass("up3").addClass("down3")
-
-  }
-
-  lastScrollTop = st;
-}
-
-// Smooth Scroll Animation
-
-var onScroll = function(e) {
-  var t = 0;
-  var position = e.currentTarget.scrollY;
-
-  function myLoop() {
-    Math.abs(y - position) < .1
-      ? y = position
-      : y += (position - y) * t;
-    $('.pro').css('transform', 'translate3d(0, ' + -y + 'px, 0)');
-    if (t < 1) {
-      t += 0.15; //Speed variable
-      requestAnimationFrame(myLoop);
-    }
-  }
-
-  myLoop();
-};
-
-
 // Parallax Items Scrolling
+
 var PARALLAX_CONFIG = {
     translateDistance: 150, // adjust for distance between items (tighter spring vs longer spring)
     itemClass: 'project', // class representing each item
@@ -92,18 +48,28 @@ var parallaxScroll = function(e) {
     });
 };
 
-// Combine Smooth Scroll with Stagger
-
 $(window).scroll(function(e, event) {
-  // onScroll(e);
-  // onMove(event);
   parallaxScroll(e);
 });
 $(window).scroll();
 
-function launchProject(el) {
+// Launch Project
 
-  $(projectIndex).addClass("hidden");
+var projectSection = document.querySelector('.project-pages');
+var projectIndex = document.querySelector('.project-index');
+var launchProject = function(projectId) {
+    var $projectPage = $('.project-page[data-project=' + projectId + ']');
+    console.log($projectPage);
+
+    // hide project index
+    $(projectIndex).removeClass("fadein").addClass("fadeout");
+
+    // reveal project page
+    $projectPage.removeClass("hide").addClass("reveal");
+    return;
+
+
+    $(projectIndex).addClass("hidden");
 
     setTimeout(function() {
 $('.project-image').css({"transform" : "scale(1.4)"});
@@ -132,9 +98,35 @@ $('.project-image').velocity({ "scale" : "1"}, {duration: 500});
       $(projectIndex).removeClass("hidden");
   }, 2000);
 
-}
+};
+
+var closeProject = function(projectId) {
+    var $projectPage = $('.project-page[data-project=' + projectId + ']');
+
+    // show project index
+    $(projectIndex).removeClass("fadeout").addClass("fadein");
+
+    // reveal project page
+    $projectPage.removeClass("reveal").addClass("hide");
+    return;
+};
+
+
+// Project Page Click Handlers
+
+$('.project').click(function(e) {
+    launchProject($(this).data("project-id"));
+});
+
+$('.project-page .close').click(function(e) {
+    console.log('adf');
+    closeProject($(this).parents('.project-page').data("project"));
+});
 
 function closeProject(el) {
+    $(projectSection).addClass("hidden");
+
+    return;
 
   launchedProject = document.querySelector('.launched');
   launchedProjectImg = document.querySelector('.launched .back');

@@ -19,45 +19,33 @@
             <div class="bord bottom-border"></div>
             <div class="bord left-border"></div>
         </div>
-        <section class="project-pages hidden">
-
-            <!--Zenefits-->
-            <div class="project-page off zenefits">
-                <div class="project-top">
-                    <div class="cover">
-                        <h1>Jay Goggin</h1>
-                    </div>
-                    <div class="project-image full">
-
-                        <img src="img/water.jpg" />
-                    </div>
-                    <div class="close hidden" onClick="closeProject(this)"></div>
-                </div>
-
-                <div class="project-content">ekjrwkler</div>
+        <!--Zenefits-->
+        <div class="project-page hide" data-project="project1">
+            <div class="project-top">
+                <img class="project-page-image" src="img/water.jpg" />
+                <div class="close"></div>
             </div>
 
-            <!--Aynax-->
-            <div class="project-page off aynax hidden">
-                <div class="project-top">
-                    <div class="project-image full">
-                        <img src="img/water.jpg" />
-                    </div>
-                    <div class="close hidden" onClick="closeProject(this)"></div>
-                </div>
+            <div class="project-content">ekjrwkler</div>
+        </div>
 
-                <div class="project-content">ekjrwkler</div>
+        <!--Aynax-->
+        <div class="project-page hide" data-project="project2">
+            <div class="project-top">
+                <img class="project-page-image" src="img/water.jpg" />
+                <div class="close"></div>
             </div>
 
-        </section>
+            <div class="project-content">ekjrwkler</div>
+        </div>
 
         <section class="project-index">
             <div class="container">
                 <div class="row project-row top-bumper">
                     <div class="col-xs-12 col-md-6">
-                        <div class="project">
-                            <div class="project-image-container" onClick="launchProject(this)">
-                                <img class="project-image2" src="img/water.jpg" class="back" />
+                        <div class="project" data-project-id="project1">
+                            <div class="project-image-container">
+                                <img class="project-image" src="img/water.jpg" class="back" />
                             </div>
                             <div class="project-title">
                                 <div class="project-title-mask">
@@ -69,9 +57,9 @@
                 </div>
                 <div class="row project-row">
                     <div class="col-xs-12 col-md-6 offset-md-6">
-                        <div class="project">
-                            <div class="project-image-container" onClick="launchProject(this)">
-                                <img class="project-image2" src="img/water.jpg" class="back" />
+                        <div class="project" data-project-id="project2">
+                            <div class="project-image-container">
+                                <img class="project-image" src="img/water.jpg" class="back" />
                             </div>
                             <div class="project-title">
                                 <div class="project-title-mask">
@@ -83,9 +71,9 @@
                 </div>
                 <div class="row project-row">
                     <div class="col-xs-12 col-md-6">
-                        <div class="project">
-                            <div class="project-image-container" onClick="launchProject(this)">
-                                <img class="project-image2" src="img/water.jpg" class="back" />
+                        <div class="project" data-project-id="project3">
+                            <div class="project-image-container">
+                                <img class="project-image" src="img/water.jpg" class="back" />
                             </div>
                             <div class="project-title">
                                 <div class="project-title-mask">
@@ -97,9 +85,9 @@
                 </div>
                 <div class="row project-row">
                     <div class="col-xs-12 col-md-6 offset-md-6">
-                        <div class="project">
-                            <div class="project-image-container" onClick="launchProject(this)">
-                                <img class="project-image2" src="img/water.jpg" class="back" />
+                        <div class="project" data-project-id="project4">
+                            <div class="project-image-container">
+                                <img class="project-image" src="img/water.jpg" class="back" />
                             </div>
                             <div class="project-title">
                                 <div class="project-title-mask">

@@ -7,6 +7,15 @@ body {
   height: 100%;
 }
 
+.fadeout {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.fadein {
+    opacity: 1;
+    transition: opacity .5s;
+}
 
 .hidden {
   display: none;
@@ -99,7 +108,7 @@ backface-visibility: hidden;
 
 }
 
-.project-image2 {
+.project-image {
     height: 300px;
     width: 100%;
     object-fit: cover;
@@ -248,37 +257,48 @@ transition-timing-function: ease-in;
 
 /*project classes*/
 
-.project-pages {
+.project-page {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  z-index: 110;
-}
-.project-page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  z-index: 100;
   overflow: hidden;
+  z-index: 10;
+}
 
+.project-page.reveal {
+    transform: translate3d(100%, 0, 0);
+    transition: transform .5s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
 
+.project-page.hide {
+    transform: translate3d(-100%, 0, 0);
+    transition: transform .5s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
 }
 
 .project-top {
   position: absolute;
-  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+}
+.project-page-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .off {
-  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-  -webkit-transition: all 1s; /* Safari */
-transition: all 1s;
--webkit-transition-timing-function: ease-in;
-transition-timing-function: ease-in;
+      -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
 }
 .on {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -289,7 +309,7 @@ transition: all 1s;
 transition-timing-function: ease-in;
 }
 
-.project-image img {
+/*.project-image img {
   width: 100%;
   left: 0;
 }
@@ -305,6 +325,7 @@ transition: all 1s;
 -webkit-transition-timing-function: ease-in;
 transition-timing-function: ease-in;
 }
+*/
 
 .project-top .cover {
   height: 400px;
@@ -337,6 +358,7 @@ transition-timing-function: ease-in;
   position: fixed;
   top: 20px;
   right: 20px;
+  cursor: pointer;
 }
 
 .zenefits {

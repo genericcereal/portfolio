@@ -1,0 +1,26 @@
+#foo {
+	-skrollr-animation-name:animation1;
+}
+
+@-skrollr-keyframes animation1 {
+	0 {
+		top: 100px;
+	}
+
+	2000 {
+		top: 3000px;
+	}
+
+	/*Same as*/
+	skrollr-2000 {
+		left:0%;
+	}
+
+	top {
+		color:rgb(0,0,0);
+	}
+
+	bottom {
+		color:rgb(255,0,0);
+	}
+}

@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+}
+
+body {
+  min-height: 200vh;
+  height: 100%;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+
+
+.inner {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+
+
+.content {
+  position: relative;
+  height: 100%;
+}
+
+.square {
+  background-color: green;
+  height: 350px;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 300px 0;
+
+}
+
+.pro {
+height: 380px;
+width: 100%;
+min-width: 500px;
+position: relative;
+}
+
+.main-title {
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 40%;
+width: 100%;
+text-align: center;
+z-index: 130;
+  backface-visibility: hidden;
+  font-size: 3em;
+  transform-style: preserve-3d;
+transition: transform 1s;
+}
+
+.main-title figure {
+  margin: 0;
+display: block;
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+}
+
+.main-title .back {
+   transform: rotateY( 180deg );
+}
+.flipped {
+  transform: rotateY( 180deg );
+}
+
+.project-title {
+  position: absolute;
+  bottom: 0;
+  height: 12px;
+  line-height: 12px;
+}
+
+.project-title-mask {
+  height: 0;
+  transform-origin: top;
+  overflow: hidden;
+}
+.top-bumper {
+  margin-top: 300px;
+}
+.square img {
+  width: 80vw;
+  position: absolute;
+  margin-left: -400px;
+  margin-top: -100px;
+}
+
+
+/*viewport borders */
+
+.borders {
+display: block;
+z-index: 140;
+position: fixed;
+}
+
+.bord {
+
+    position: fixed;
+      background-color: #000;
+  -webkit-transition: all 0.2s; /* Safari */
+transition: all 0.2s;
+}
+.top-border {
+  height: 0px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+
+}
+
+
+.bottom-border {
+  height: 0px;
+  width: 100vw;
+
+  bottom: 0;
+  left: 0;
+
+}
+
+.right-border {
+  height: 100vh;
+  width: 0px;
+
+  bottom: 0;
+  right: 0;
+
+}
+
+.left-border {
+  height: 100vh;
+  width: 0px;
+
+  bottom: 0;
+  left: 0;
+
+}
+
+
+.square1 {
+
+
+}
+
+.square2 {
+
+
+}
+
+.square3 {
+
+}
+
+.zenefits-square {
+
+
+}
+
+/*ups and downs*/
+
+.up1 {
+  -webkit-transition: transform 0.1s; /* Safari */
+transition: transform 0.1s;
+}
+
+.up2 {
+  -webkit-transition: transform 0.4s; /* Safari */
+transition: transform 0.4s;
+}
+
+.up3 {
+  -webkit-transition: transform 0.7s; /* Safari */
+transition: transform 0.7s;
+}
+
+
+.down1 {
+  -webkit-transition: transform 0.7s; /* Safari */
+transition: transform 0.7s;
+}
+
+.down2 {
+  -webkit-transition: transform 0.4s; /* Safari */
+transition: transform 0.4s;
+}
+
+.down3 {
+  -webkit-transition: transform 0.1s; /* Safari */
+transition: transform 0.1s;
+}
+
+.invisible {
+  opacity: 0;
+  -webkit-transition: all 2s; /* Safari */
+transition: all 2s;
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+}
+.full {
+  width: 100vw !important;
+
+}
+.shrink {
+  width: 80vw;
+}
+
+/*project classes*/
+
+.project-pages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 110;
+}
+.project-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  z-index: 100;
+  overflow: hidden;
+
+
+}
+
+.project-top {
+  position: absolute;
+  opacity: 0.4;
+}
+
+.off {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  -webkit-transition: all 1s; /* Safari */
+transition: all 1s;
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+}
+.on {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  -webkit-transition: all 1s; /* Safari */
+transition: all 1s;
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+}
+
+.project-image img {
+  width: 100%;
+  left: 0;
+}
+
+
+.project-image {
+  position: relative;
+  display: block;
+
+  transform-origin: bottom right;
+  -webkit-transition: all 1s; /* Safari */
+transition: all 1s;
+-webkit-transition-timing-function: ease-in;
+transition-timing-function: ease-in;
+}
+
+.project-top .cover {
+  height: 400px;
+  padding-top: 0px;
+  position: absolute;
+  overflow: hidden;
+  top: 30%;
+  z-index: 140;
+
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+}
+.project-top .cover h1 {
+
+  font-size: 18em;
+
+}
+
+.project-content {
+  margin-top: 100vh;
+  background-color: #FFF;
+  padding: 500px 0;
+
+}
+.close {
+  height: 40px;
+  width: 40px;
+  background-color: #555;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.zenefits {
+
+}
+
+.pro:hover  .top-border {
+  height: 4px;
+}

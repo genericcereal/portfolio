@@ -63,6 +63,7 @@ var launchProject = function(projectId) {
 
     // hide project index
     $(projectIndex).removeClass("fadein").addClass("fadeout");
+    $('body').addClass('backgrounded');
 
     // reveal project page
     $projectPage.removeClass("hide").addClass("reveal");
@@ -105,6 +106,7 @@ var closeProject = function(projectId) {
 
     // show project index
     $(projectIndex).removeClass("fadeout").addClass("fadein");
+    $('body').removeClass('backgrounded');
 
     // reveal project page
     $projectPage.removeClass("reveal").addClass("hide");
@@ -119,7 +121,6 @@ $('.project').click(function(e) {
 });
 
 $('.project-page .close').click(function(e) {
-    console.log('adf');
     closeProject($(this).parents('.project-page').data("project"));
 });
 

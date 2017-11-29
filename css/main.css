@@ -14,7 +14,7 @@ body {
 
 .fadein {
     opacity: 1;
-    transition: opacity .5s;
+    transition: none;
 }
 
 .hidden {
@@ -117,18 +117,22 @@ body.backgrounded {
     overflow: hidden;
 }
 
-.project-image-container {
-
-}
-
 .project-image {
+    position: absolute;
     height: 300px;
     width: 100%;
     object-fit: cover;
+    pointer-events: none;
+    transform-origin: initial;
+    top: 0;
+    left: 0;
+}
+
+.project-image-spacer {
+    height: 300px;
 }
 
 .project-title {
-
 }
 .project-title-mask {
 
@@ -290,9 +294,7 @@ transition-timing-function: ease-in;
 
 .project-page.hide {
     transform: translate3d(-100%, 0, 0);
-    transition: transform .5s;
-    -webkit-transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
+    transition: none;
 }
 
 .project-page-image {
@@ -328,24 +330,6 @@ transition: all 1s;
 -webkit-transition-timing-function: ease-in;
 transition-timing-function: ease-in;
 }
-
-/*.project-image img {
-  width: 100%;
-  left: 0;
-}
-
-
-.project-image {
-  position: relative;
-  display: block;
-
-  transform-origin: bottom right;
-  -webkit-transition: all 1s; /* Safari */
-transition: all 1s;
--webkit-transition-timing-function: ease-in;
-transition-timing-function: ease-in;
-}
-*/
 
 .project-top .cover {
   height: 400px;

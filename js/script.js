@@ -17,7 +17,7 @@ var spaceLeftImg = "";
 //   var spaceRightImg = domRectImg.right + "px";
 
 var PARALLAX_CONFIG = {
-  translateDistance: 150, // adjust for distance between items (tighter spring vs longer spring)
+  translateDistance: 120, // adjust for distance between items (tighter spring vs longer spring)
   itemClass: 'project', // class representing each item
   incomingTranslateTiming: 1.25, // these two values affect the "springiness" feel
   outgoingTranslateTiming: .75
@@ -73,7 +73,7 @@ var launchProject = function(projectId) {
   launchedProject = document.querySelector('.project[data-project-id=' + projectId + ']');
 
   domRect = launchedProject.getBoundingClientRect();
-  spaceBelow = domRect.bottom - 40 + "px";
+  spaceBelow = domRect.bottom - 60 + "px";
   spaceAbove = domRect.top + "px";
   spaceLeft = domRect.left + "px";
   spaceRight = domRect.right + "px";
@@ -91,6 +91,7 @@ var launchProject = function(projectId) {
 
   setTimeout(function() {
     $projectPage.removeClass("hide").addClass("reveal");
+    $('.project-page[data-project=' + projectId + '] .project-page-image').css({transform: "scale(1,1)", opacity: 1});
 
   }, 1000);
 
